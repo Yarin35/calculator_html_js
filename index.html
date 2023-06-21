@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    .calculator {
+      width: 220px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .calculator input[type="text"] {
+      width: 93%;
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 16px;
+    }
+    .calculator .button-container {
+      display: flex;
+    }
+    .calculator .button-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .calculator input[type="button"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 5px;
+      font-size: 16px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <div class="button-container">
+      <div class="button-column">
+        <input type="button" value="1" onclick="appendValue(1)">
+        <input type="button" value="4" onclick="appendValue(4)">
+        <input type="button" value="7" onclick="appendValue(7)">
+        <input type="button" value="0" onclick="appendValue(0)">
+      </div>
+      <div class="button-column">
+        <input type="button" value="2" onclick="appendValue(2)">
+        <input type="button" value="5" onclick="appendValue(5)">
+        <input type="button" value="8" onclick="appendValue(8)">
+        <input type="button" value="Clear" onclick="clearResult()">
+      </div>
+      <div class="button-column">
+        <input type="button" value="3" onclick="appendValue(3)">
+        <input type="button" value="6" onclick="appendValue(6)">
+        <input type="button" value="9" onclick="appendValue(9)">
+        <input type="button" value="=" onclick="calculate()">
+      </div>
+      <div class="button-column">
+        <input type="button" value="+" onclick="appendValue('+')">
+        <input type="button" value="-" onclick="appendValue('-')">
+        <input type="button" value="*" onclick="appendValue('*')">
+        <input type="button" value="/" onclick="appendValue('/')">
+      </div>
+    </div>
+  </div>
+  <script>
+    function appendValue(value) {
+      document.getElementById('result').value += value;
+    }
+
+    function calculate() {
+      const resultField = document.getElementById('result');
+      try {
+        const result = eval(resultField.value);
+        resultField.value = result;
+      } catch (error) {
+        resultField.value = 'Error';
+      }
+    }
+
+    function clearResult() {
+      document.getElementById('result').value = '';
+    }
+  </script>
+</body>
+</html>
