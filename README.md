@@ -6,13 +6,13 @@ a simple calculator done in html/js and compiled with docker-compose
 - web browser (firefox/chrome/bing/opera)
 - sudo permissions (to use docker)
 
-Usage:
+📋 Usage:
 - sudo docker-compose up --build
 - open a browser
 - go to http://localhost (you might change it so beware 😄)
 - try it as you want (division by zero is handled and won't break everything 😎)
 
-once you're finished 
+✔️ once you're finished 
 simply use [sudo docker-compose down; sudo docker-compose kill] to stop the process.
 this is a simple calculator made with html/js and docker-compose to compile.
 
